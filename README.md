@@ -1,5 +1,5 @@
 [![PyPI](https://badge.fury.io/py/slackbot.svg)](https://pypi.python.org/pypi/slackbotng) 
-[![Build Status](https://secure.travis-ci.org/amuraru/slackbotng.svg?branch=devel)](http://travis-ci.org/amuraru/slackbotng)
+[![Build Status](https://secure.travis-ci.com/amuraru/slackbotng.svg?branch=devel)](http://travis-ci.com/amuraru/slackbotng)
 
 A chat bot for [Slack](https://slack.com) inspired by [llimllib/limbo](https://github.com/llimllib/limbo) and [will](https://github.com/skoczen/will).  
 This is a fork of [lins05/slackbot](https://github.com/lins05/slackbot) with the package name being renamed to `slackbotng` due to the lack of the activity from the original author.
