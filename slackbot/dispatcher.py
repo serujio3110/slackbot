@@ -10,6 +10,7 @@ from functools import wraps
 import six
 from slackbot.manager import PluginsManager
 from slackbot.utils import WorkerPool
+from slackbot.utils import to_utf8
 from slackbot import settings
 
 logger = logging.getLogger(__name__)
@@ -317,6 +318,27 @@ class Message(object):
             emojiname=emojiname,
             channel=self._body['channel'],
             timestamp=self._body['ts'])
+
+    @unicode_compact
+    def reply_upload_file(self, fname, fpath, initial_comment='', in_thread=None):
+        """
+            Upload the file and send it as a reply
+            If the message was send in a thread, answer in a thread per default.
+        """
+        if in_thread is None:
+            in_thread = 'thread_ts' in self.body
+
+        if in_thread:
+            thread_ts = self.thread_ts
+        else:
+            thread_ts = None
+        self._client.upload_file(
+            self._body['channel'],
+            to_utf8(fname),
+            to_utf8(fpath),
+            to_utf8(initial_comment),
+            thread_ts=thread_ts
+        )
 
     @property
     def channel(self):
