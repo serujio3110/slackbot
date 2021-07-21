@@ -157,7 +157,9 @@ class SlackClient(object):
                 icon_emoji=self.bot_emoji,
                 attachments=attachments,
                 as_user=as_user,
-                thread_ts=thread_ts)
+                thread_ts=thread_ts,
+                unfurl_links=False,
+                unfurl_media=False)
 
     def get_channel(self, channel_id):
         return Channel(self, self.channels[channel_id])

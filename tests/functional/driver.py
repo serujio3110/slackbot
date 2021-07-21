@@ -142,7 +142,7 @@ class Driver(object):
     def _send_message_to_bot(self, channel, msg):
         self.clear_events()
         self._start_ts = time.time()
-        self.slacker.chat.post_message(channel, msg, username=self.driver_username)
+        self.slacker.chat.post_message(channel, msg, username=self.driver_username, unfurl_links=False, unfurl_media=False)
 
     def _wait_for_bot_message(self, channel, match, maxwait=60, tosender=True, thread=False):
         for _ in range(maxwait):
