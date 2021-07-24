@@ -127,6 +127,8 @@ class SlackClient(object):
             'text': message,
             'attachments': attachments,
             'thread_ts': thread_ts,
+            'unfurl_links': False,
+            'unfurl_media': False,
             }
         self.send_to_websocket(message_json)
 
