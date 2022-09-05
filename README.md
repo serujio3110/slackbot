@@ -1,6 +1,4 @@
-[![PyPI](https://badge.fury.io/py/slackbot.svg)](https://pypi.python.org/pypi/slackbotng) 
-[![Build Status](https://secure.travis-ci.com/amuraru/slackbotng.svg?branch=devel)](http://travis-ci.com/amuraru/slackbotng)
-
+[![PyPI](https://badge.fury.io/py/slackbotng.svg)](https://pypi.python.org/pypi/slackbotng) [![CI](https://github.com/amuraru/slackbot/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/amuraru/slackbot/actions/workflows/main.yml)
 
 **This is a fork of [scrapinghub/slackbot](https://github.com/scrapinghub/slackbot) due to the lack of the activity from the original author.**
 **Python package was renamed to `slackbotng` and it's being publishing to: https://pypi.org/project/slackbotng/**
