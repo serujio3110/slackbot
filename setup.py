@@ -4,10 +4,9 @@ from setuptools import setup, find_packages
 __version__ = open(join(dirname(__file__), 'slackbot/VERSION')).read().strip()
 
 install_requires = (
-    'requests>=2.4.0',
-    'websocket-client>=0.22.0,<=0.44.0',
-    'slacker>=0.9.50',
-    'six>=1.10.0'
+    'requests',
+    'websocket-client',
+    'slack-sdk',
 ) # yapf: disable
 
 excludes = (

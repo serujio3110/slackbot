@@ -1,0 +1,5 @@
+pip-tools
+requests
+websocket-client
+slack-sdk
+pytest

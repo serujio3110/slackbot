@@ -5,8 +5,9 @@ import logging
 import tempfile
 import requests
 from contextlib import contextmanager
-from six.moves import _thread, range, queue
-import six
+import _thread
+import queue
+
 
 logger = logging.getLogger(__name__)
 
@@ -22,30 +23,6 @@ def download_file(url, fpath, token=''):
                 f.flush()
     logger.debug('fetch %s', fpath)
     return fpath
-
-
-def to_utf8(s):
-    """Convert a string to utf8. If the argument is an iterable
-    (list/tuple/set), then each element of it would be converted instead.
-
-    >>> to_utf8('a')
-    'a'
-    >>> to_utf8(u'a')
-    'a'
-    >>> to_utf8([u'a', u'b', u'\u4f60'])
-    ['a', 'b', '\\xe4\\xbd\\xa0']
-    """
-    if six.PY2:
-        if isinstance(s, str):
-            return s
-        elif isinstance(s, unicode):
-            return s.encode('utf-8')
-        elif isinstance(s, (list, tuple, set)):
-            return [to_utf8(v) for v in s]
-        else:
-            return s
-    else:
-        return s
 
 
 @contextmanager
