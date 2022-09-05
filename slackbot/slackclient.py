@@ -79,7 +79,7 @@ class SlackClient(object):
         self.websocket.sock.setblocking(0)
 
         logger.debug('Getting users')
-        for page in self.webapi.users_list(limit=200):
+        for page in self.webapi.users_list(limit=1000):
             self.parse_user_data(page['members'])
         logger.debug('Getting channels')
         for page in self.webapi.conversations_list(
