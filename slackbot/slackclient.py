@@ -171,7 +171,7 @@ class SlackClient(object):
         self, channel, message, attachments=None, blocks=None, as_user=True, thread_ts=None
     ):
         channel = self._channelify(channel)
-        self.webapi.chat_postMessage(
+        return self.webapi.chat_postMessage(
             channel=channel,
             text=message,
             username=self.login_data['self']['name'],
