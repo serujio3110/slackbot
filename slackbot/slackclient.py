@@ -152,14 +152,15 @@ class SlackClient(object):
     def upload_file(self, channel, fname, fpath, comment, thread_ts=None):
         channel = self._channelify(channel)
         fname = fname or os.path.basename(fpath)
-        return self.webapi.files_upload(fpath,
+        return self.webapi.files_upload(
+                                 file=fpath,
                                  channels=channel,
                                  filename=fname,
                                  initial_comment=comment,
                                  thread_ts=thread_ts)
 
     def upload_content(self, channel, fname, content, comment, thread_ts=None):
-        return self.webapi.files_upload(None,
+        return self.webapi.files_upload(
                                  channels=channel,
                                  content=content,
                                  filename=fname,
